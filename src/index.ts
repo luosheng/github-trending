@@ -20,7 +20,7 @@ app.get('/repositories', async (c) => {
   $('article.Box-row').each((i, el) => {
     const $el = $(el)
     const [owner, name] = $el.find('h2 a').text().split('/').map((s) => s.trim())
-    const description = $el.find('p').text()
+    const description = $el.find('p').text().trim()
     const language = $el.find('[itemprop=programmingLanguage]').text().trim()
     const stargazersCount = parseInt($el.find('[href$=stargazers]').text().trim().replace(',', ''))
     const forksCount = parseInt($el.find('[href$=forks]').text().trim().replace(',', ''))
